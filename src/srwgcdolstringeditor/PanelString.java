@@ -222,14 +222,14 @@ public class PanelString extends javax.swing.JPanel {
                 case 39: // ' = 39 -> 81 8c
                     Jap_char[1] = (byte) 0x8c;
                     break;
-                case 40: // ( = 40 -> 81 7a
-                    Jap_char[1] = (byte) 0x7a;
+                case 40: // ( = 40 -> 81 69
+                    Jap_char[1] = (byte) 0x69;
                     break;
-                case 41: // ) = 41 -> 81 7b
-                    Jap_char[1] = (byte) 0x7b;
+                case 41: // ) = 41 -> 81 6a
+                    Jap_char[1] = (byte) 0x6a;
                     break;
                 case 42: // * = 42 -> 81 96
-                    Jap_char[1] = (byte) 0x7b;
+                    Jap_char[1] = (byte) 0x96;
                     break;
                 case 43: // + = 43 -> 81 7b
                     Jap_char[1] = (byte) 0x7b;
