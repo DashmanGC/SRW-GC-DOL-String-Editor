@@ -3198,6 +3198,9 @@ public class UserInterfaceDSE extends javax.swing.JFrame {
                 filename += ".bin";
 
             RandomAccessFile f = new RandomAccessFile(filename, "rw");
+            
+            // Truncate the file (in case we're overwriting)
+            f.setLength(0);
 
             for (int i = 0; i < 21; i++)
                 saveBINcategory(f, i);
