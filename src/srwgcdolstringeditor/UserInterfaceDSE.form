@@ -70,6 +70,14 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuitemConvertSJISActionPerformed"/>
               </Events>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menuConvertASCII">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Convert strings to ASCII"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuConvertASCIIActionPerformed"/>
+              </Events>
+            </MenuItem>
           </SubComponents>
         </Menu>
       </SubComponents>
@@ -211,7 +219,6 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="11" style="1"/>
             </Property>
-            <Property name="selected" type="boolean" value="true"/>
             <Property name="text" type="java.lang.String" value="Convert keystrokes to SJIS"/>
           </Properties>
           <Events>
@@ -229,7 +236,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="textfieldOffset">
           <Properties>
-            <Property name="text" type="java.lang.String" value="809ED9F4"/>
+            <Property name="text" type="java.lang.String" value="809F713A"/>
           </Properties>
         </Component>
       </SubComponents>

@@ -123,6 +123,7 @@ public class UserInterfaceDSE extends javax.swing.JFrame {
         menuitemExit = new javax.swing.JMenuItem();
         menuTools = new javax.swing.JMenu();
         menuitemConvertSJIS = new javax.swing.JMenuItem();
+        menuConvertASCII = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SRW GC DOL String Editor by Dashman");
@@ -130,7 +131,7 @@ public class UserInterfaceDSE extends javax.swing.JFrame {
 
         panelNavigation.setBorder(javax.swing.BorderFactory.createTitledBorder("Navigation"));
 
-        labelCategory.setFont(new java.awt.Font("Tahoma", 1, 11));
+        labelCategory.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         labelCategory.setText("Category:");
 
         comboCategory.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Unit Abilities", "Pilot Skills", "Full Upgrade Bonuses", "Series Titles", "BGM Names", "Search Menu", "Options Menu", "Scenario Menu", "Capture Menu", "Deployment Menu", "Extra Menu Strings", "Layzner Upgrades", "Win Conditions", "Lose Conditions", "Black Screen Text", "Opening Roll", "Ending Roll", "Staff Roll", "Cast", "Memory Card Management", "Name Entry" }));
@@ -140,8 +141,7 @@ public class UserInterfaceDSE extends javax.swing.JFrame {
             }
         });
 
-        checkSJIS.setFont(new java.awt.Font("Tahoma", 1, 11));
-        checkSJIS.setSelected(true);
+        checkSJIS.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         checkSJIS.setText("Convert keystrokes to SJIS");
         checkSJIS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,11 +149,11 @@ public class UserInterfaceDSE extends javax.swing.JFrame {
             }
         });
 
-        labelOffset.setFont(new java.awt.Font("Tahoma", 1, 11));
+        labelOffset.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         labelOffset.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         labelOffset.setText("Starting Offset:");
 
-        textfieldOffset.setText("809ED9F4");
+        textfieldOffset.setText("809F713A");
 
         javax.swing.GroupLayout panelNavigationLayout = new javax.swing.GroupLayout(panelNavigation);
         panelNavigation.setLayout(panelNavigationLayout);
@@ -169,7 +169,7 @@ public class UserInterfaceDSE extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(labelOffset, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(textfieldOffset, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                .addComponent(textfieldOffset)
                 .addContainerGap())
         );
         panelNavigationLayout.setVerticalGroup(
@@ -257,6 +257,14 @@ public class UserInterfaceDSE extends javax.swing.JFrame {
         });
         menuTools.add(menuitemConvertSJIS);
 
+        menuConvertASCII.setText("Convert strings to ASCII");
+        menuConvertASCII.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuConvertASCIIActionPerformed(evt);
+            }
+        });
+        menuTools.add(menuConvertASCII);
+
         jMenuBar1.add(menuTools);
 
         setJMenuBar(jMenuBar1);
@@ -268,7 +276,7 @@ public class UserInterfaceDSE extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(scrollStrings, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 825, Short.MAX_VALUE)
+                    .addComponent(scrollStrings, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panelNavigation, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -392,6 +400,97 @@ public class UserInterfaceDSE extends javax.swing.JFrame {
             //this.setTitle(current_file + " - " + title);
         }
     }//GEN-LAST:event_menuitemOverrideActionPerformed
+
+    private void menuConvertASCIIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuConvertASCIIActionPerformed
+        // TODO add your handling code here:
+        saveCategory();
+        
+        for (int i = 0; i < unit_ability.length; i++){
+                unit_ability[i].text = convertToASCII(unit_ability[i].text);
+        }
+        
+        for (int i = 0; i < pilot_skill.length; i++){
+                pilot_skill[i].text = convertToASCII(pilot_skill[i].text);
+        }
+        
+        for (int i = 0; i < fub.length; i++){
+                fub[i].text = convertToASCII(fub[i].text);
+        }
+        
+        for (int i = 0; i < series.length; i++){
+                series[i].text = convertToASCII(series[i].text);
+        }
+        
+        for (int i = 0; i < bgm.length; i++){
+                bgm[i].text = convertToASCII(bgm[i].text);
+        }
+        
+        for (int i = 0; i < search.length; i++){
+                search[i].text = convertToASCII(search[i].text);
+        }
+        
+        for (int i = 0; i < option.length; i++){
+                option[i].text = convertToASCII(option[i].text);
+        }
+        
+        for (int i = 0; i < scenario.length; i++){
+                scenario[i].text = convertToASCII(scenario[i].text);
+        }
+        
+        for (int i = 0; i < capture.length; i++){
+                capture[i].text = convertToASCII(capture[i].text);
+        }
+        
+        for (int i = 0; i < deploy.length; i++){
+                deploy[i].text = convertToASCII(deploy[i].text);
+        }
+        
+        for (int i = 0; i < extra.length; i++){
+                extra[i].text = convertToASCII(extra[i].text);
+        }
+        
+        for (int i = 0; i < layzner.length; i++){
+                layzner[i].text = convertToASCII(layzner[i].text);
+        }
+        
+        for (int i = 0; i < win.length; i++){
+                win[i].text = convertToASCII(win[i].text);
+        }
+        
+        for (int i = 0; i < lose.length; i++){
+                lose[i].text = convertToASCII(lose[i].text);
+        }
+        
+        for (int i = 0; i < black_screen.length; i++){
+                black_screen[i].text = convertToASCII(black_screen[i].text);
+        }
+        
+        for (int i = 0; i < opening.length; i++){
+                opening[i].text = convertToASCII(opening[i].text);
+        }
+        
+        for (int i = 0; i < ending.length; i++){
+                ending[i].text = convertToASCII(ending[i].text);
+        }
+        
+        for (int i = 0; i < staff.length; i++){
+                staff[i].text = convertToASCII(staff[i].text);
+        }
+        
+        for (int i = 0; i < cast.length; i++){
+                cast[i].text = convertToASCII(cast[i].text);
+        }
+        
+        for (int i = 0; i < mem_card.length; i++){
+                mem_card[i].text = convertToASCII(mem_card[i].text);
+        }
+        
+        for (int i = 0; i < name_entry.length; i++){
+                name_entry[i].text = convertToASCII(name_entry[i].text);
+        }
+        
+        loadCategory();
+    }//GEN-LAST:event_menuConvertASCIIActionPerformed
 
 
     public void initCategories(){
@@ -3191,6 +3290,129 @@ public class UserInterfaceDSE extends javax.swing.JFrame {
     }
 
 
+    // Converts SJIS text in ASCII text (only common characters)
+    public String convertToASCII(String text){
+        String newText = "";
+
+        for (int i = 0; i < text.length(); i++){
+            char c = text.charAt(i);
+            char ascii_char = SJIStoASCII(c);
+
+            newText += ascii_char;
+        }
+
+        return newText;
+    }
+    
+    
+    // Converts a SJIS char to ASCII
+    public char SJIStoASCII(char c){
+        char newChar = ' ';
+        
+        // SJIS characters
+        char char_a = 'ａ';
+        char char_z = 'ｚ';
+        char char_A = 'Ａ';
+        char char_Z = 'Ｚ';
+        char char_0 = '０';
+        char char_9 = '９';
+        
+        if (c >= char_0 && c <= char_9){
+            int difference = c - char_0;
+            newChar = '0';
+            newChar += difference;
+        }
+        else if (c >= char_A && c <= char_Z){
+            int difference = c - char_A;
+            newChar = 'A';
+            newChar += difference;
+        }
+        else{ 
+            if (c >= char_a && c <= char_z){
+                int difference = c - char_a;
+                newChar = 'a';
+                newChar += difference;
+            }
+            else{
+                switch (c){
+                    case '　':
+                        newChar = ' ';
+                        break;
+                    case '！':
+                        newChar = '!';
+                        break;
+                    case '″':
+                        newChar = '\"';
+                        break;
+                    case '＃':
+                        newChar = '#';
+                        break;
+                    case '％':
+                        newChar = '%';
+                        break;
+                    case '＆':
+                        newChar = '&';
+                        break;
+                    case '′':
+                        newChar = '\'';
+                        break;
+                    case '（':
+                        newChar = '(';
+                        break;
+                    case '）':
+                        newChar = ')';
+                        break;
+                    case '＊':
+                        newChar = '*';
+                        break;
+                    case '＋':
+                        newChar = '+';
+                        break;
+                    case '，':
+                        newChar = ',';
+                        break;
+                    case '−':
+                    case '－':
+                        newChar = '-';
+                        break;
+                    case '．':
+                        newChar = '.';
+                        break;
+                    case '／':
+                        newChar = '/';
+                        break;
+                    case '：':
+                        newChar = ':';
+                        break;
+                    case '；':
+                        newChar = ';';
+                        break;
+                    case '＜':
+                        newChar = '<';
+                        break;
+                    case '＝':
+                        newChar = '=';
+                        break;
+                    case '＞':
+                        newChar = '>';
+                        break;
+                    case '？':
+                        newChar = '?';
+                        break;
+                    case '＠':
+                        newChar = '@';
+                        break;
+                    default:    // Leave the character as SJIS if it's none of the others
+                        newChar = c;
+                }
+            }
+        }
+        
+        return newChar;
+    }
+
+    
+    
     // Saves the strings to a bin file
     public void saveBIN(String filename){
         try {
@@ -3557,6 +3779,7 @@ public class UserInterfaceDSE extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JLabel labelCategory;
     private javax.swing.JLabel labelOffset;
+    private javax.swing.JMenuItem menuConvertASCII;
     private javax.swing.JMenu menuFile;
     private javax.swing.JMenu menuTools;
     private javax.swing.JMenuItem menuitemConvertSJIS;
