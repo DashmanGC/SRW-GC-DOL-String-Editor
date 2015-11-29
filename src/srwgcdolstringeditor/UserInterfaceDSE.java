@@ -1097,15 +1097,15 @@ public class UserInterfaceDSE extends javax.swing.JFrame {
         extra[4].pointers = new long[] {0x002e8904, 0x002e8c38};
 
         extra[5].text_offset = 0x0030ce24;
-        extra[5].pointers = new long[] {0x002d75cc, 0x002d86bc};
+        extra[5].pointers = new long[] {0x002d75cc, 0x002d86bc, 0x002E8D68};
         extra[6].text_offset = 0x0030ce28;
-        extra[6].pointers = new long[] {0x002d75d0, 0x002d86c0};
+        extra[6].pointers = new long[] {0x002d75d0, 0x002d86c0, 0x002E8D6C};
         extra[7].text_offset = 0x0030ce2c;
-        extra[7].pointers = new long[] {0x002d75d4, 0x002d86c4};
+        extra[7].pointers = new long[] {0x002d75d4, 0x002d86c4, 0x002E8D70};
         extra[8].text_offset = 0x0030ce30;
-        extra[8].pointers = new long[] {0x002d75d8, 0x002d86c8};
+        extra[8].pointers = new long[] {0x002d75d8, 0x002d86c8, 0x002E8D74};
         extra[9].text_offset = 0x0030ce34;
-        extra[9].pointers = new long[] {0x002d75dc, 0x002d86cc};
+        extra[9].pointers = new long[] {0x002d75dc, 0x002d86cc, 0x002E8D78};
 
         extra[10].text_offset = 0x0030ce64;
         extra[10].pointers = new long[] {0x002d8728, 0x002e8924, 0x002e8c58};
