@@ -1031,7 +1031,7 @@ public class UserInterfaceDSE extends javax.swing.JFrame {
         scenario[3].text_offset = 0x002c0958;
         scenario[3].pointers = new long[] {0x002e3788};
         scenario[4].text_offset = 0x002c0980;
-        scenario[4].pointers = new long[] {0x002e3798};
+        scenario[4].pointers = new long[] {0x002e3798, 0x002e37c8, 0x002e37f8};
 
         scenario[5].text_offset = 0x002c0994;
         scenario[5].pointers = new long[] {0x002e37b8};
